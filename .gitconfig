@@ -1,0 +1,7 @@
+[color]
+	ui = auto
+[user]
+	name = Dave MacFarlane
+	email = driusan@gmail.com
+[alias]
+    stat = status
