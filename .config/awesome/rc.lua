@@ -197,7 +197,10 @@ globalkeys = awful.util.table.join(
         end),
 
     -- Standard program
-    awful.key({ modkey,           }, "t", function () awful.util.spawn(terminal) end),
+    awful.key({ modkey,           }, "t", function () awful.util.spawn(terminal .. " -e tmux") end),
+    awful.key({ modkey, "Shift"   }, "t", function () awful.util.spawn(terminal)  end),
+    -- awful.key({ modkey,           }, "g", function () awful.util.spawn("firefox") end),
+    awful.key({ modkey,           }, "g", function () awful.util.spawn("google-chrome") end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
@@ -211,7 +214,7 @@ globalkeys = awful.util.table.join(
 
     -- default.. changed to menu
     -- awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
-    -- awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
+    awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, 1) end),
 
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
@@ -342,3 +345,5 @@ end)
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+awful.util.spawn_with_shell("xscreensaver -no-splash")
+awful.util.spawn_with_shell('xinput set-button-map "Evoluent VerticalMouse 4" 1 3 0 4 5 6 7 8 2 9 11 12 13 14 15')
