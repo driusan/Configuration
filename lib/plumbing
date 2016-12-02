@@ -14,4 +14,4 @@ plumb start go doc $1
 type is text
 data matches ('[a-fA-F0-9][a-fA-F0-9][a-fA-F0-9]+')
 plumb to pager
-plumb start rc -c 'cd '$wdir' && git show $1'
+plumb start rc -c 'cd '$wdir' && git show '$1
